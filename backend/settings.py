@@ -42,6 +42,15 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'rest_framework.authtoken',
 ]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hch4rr8if',
+    'API_KEY': '766838614953679',
+    'API_SECRET': 'U2yHnGjTrwjhTmekeVWV3-2uGlI',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') # this two lines of codes are added to return secured https together with the middle ware first line
+SECURE_SSL_REDIRECT = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
