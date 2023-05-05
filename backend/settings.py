@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)sg776-a0#3x*-0j3coc$*59j291w30*zc61jpm7=p(8z)m3)d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0','192.168.8.101', '127.0.0.1']
+ALLOWED_HOSTS = ['www.gwucf.org', '127.0.0.1']
 
 
 # Application definition
@@ -37,16 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'api',
     'rest_framework',
     'phonenumber_field',
     'rest_framework.authtoken',
 ]
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'hch4rr8if',
     'API_KEY': '766838614953679',
     'API_SECRET': 'U2yHnGjTrwjhTmekeVWV3-2uGlI',
 }
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') # this two lines of codes are added to return secured https together with the middle ware first line
@@ -128,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# STATIC_URL = 'static/'
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
